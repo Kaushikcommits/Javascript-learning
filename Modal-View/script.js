@@ -24,5 +24,16 @@ otherwise showModal fucntion will execute as soon as the for loop starts
   );
 }
 
+// if ESC is pressed then the following happens
+document.addEventListener(
+  "keydown" /* if a key is only pressed once */,
+  function (e) {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      //execute only if the modal is not hidden {
+      closeModal();
+    }
+  }
+);
+
 btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
