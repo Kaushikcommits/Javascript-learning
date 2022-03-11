@@ -14,7 +14,7 @@ const closeModal = () => {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 };
-
+console.log(btnsShowModal.length); // we can see that the selected DOM element has 3 lists
 for (let i = 0; i < btnsShowModal.length; i++) {
   btnsShowModal[i].addEventListener(
     "click",
@@ -29,7 +29,8 @@ document.addEventListener(
   "keydown" /* if a key is only pressed once */,
   function (e) {
     if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-      //execute only if the modal is not hidden {
+      //classList.contains() will return true if the keyword mentioned is existing.
+      //so execute only if the modal is not hidden {
       closeModal();
     }
   }

@@ -40,7 +40,8 @@ const kaushik = {
     // After ES6, we can simply use the arrow function since
     //the arrow function does not have a this keyword and takes the this keyword from the parent's scope
     const isMillenial = () => {
-      console.log("Hehe", this.year >= 1981 && this.year <= 1996); // 'THIS' is now pointing to parent kaushik object
+      console.log("Hehe", this.year >= 1981 && this.year <= 1996); // 'THIS'is now pointing
+      //to parent kaushik object
     };
     isMillenial(); // * this function is inside calcAge function
   },
@@ -117,8 +118,11 @@ const shirleyMarried = {
 };
 
 const shirleyDivorced = Object.assign({}, shirleyMarried);
-/* Object.assign() will copy the object to an empty object {} and then store it inside shirleyDivorced so basically
-creating a new reference and copy the shirleyMarried object to the new reference */
+/* Object.assign() will copy the shirleyMarried object to an empty object {} and then store it inside shirleyDivorced so basically
+creating a new reference and copy the shirleyMarried object to the new reference and pointing to the same 
+value in the memory heap, in other words it doesn't do deep cloning. If we try to add an array and use .push 
+for an array on the first object, it also applies .push to the cloned object, so for a deep cloning there are 
+other ways that we will see later down the line. */
 
 shirleyDivorced.lastName = "AMBROISE";
 console.log("Shirley Married:", shirleyMarried);
